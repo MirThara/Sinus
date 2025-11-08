@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --control-width: 50vw;
+}
+
+body {
+    margin: 0;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #222;
+}
+
+#canvas1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #222;
+}
+
+.controls {
+    z-index: 1;
+    position: absolute;
+    top: 20px;
+    left: calc(50vw - var(--control-width) / 2);
+    padding: 10px 14px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+    backdrop-filter: blur(6px);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.toggle {
+    padding: 10px 14px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+    backdrop-filter: blur(6px);
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.toggle:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+input[type=number] {
+    padding: 5px 7px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+    backdrop-filter: blur(8px);
+}
+
+.controls2 {
+    z-index: 1;
+    position: absolute;
+    top: 20px;
+    left: calc(50vw - var(--control-width) / 2);
+    padding: 10px 14px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+    backdrop-filter: blur(6px);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

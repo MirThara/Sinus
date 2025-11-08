@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periodische Funktionen</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="controls">
+            <button class="toggle" id="toggle">⏸ Pause</button>
+            <label for="amplitude">f(x)=sin(x) • </label>
+            <input type="number" name="amplitude" max="2" min="0" step="0.01" id="ampSlider" placeholder="1" value="1">
+        </div>
+        <canvas id="canvas"></canvas>
+        <div class="controls2">
+            <button class="toggle" id="toggle2">⏸ Pause</button>
+            <label for="amplitude">f(x)=sin(x) • </label>
+            <input type="number" name="amplitude" max="2" min="0" step="0.01" id="ampSlider2" placeholder="1" value="1">
+        </div>
+        <canvas id="canvas1"></canvas>
+    </div>
+
+    <script src="js/sine.js"></script>
+    <script src="js/cosine.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

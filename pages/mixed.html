@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sinus & Kosinus Animation</title>
+    <link rel="stylesheet" href="../index.css">
+</head>
+
+<body>
+
+    <h1>Sinus & Kosinus – parallele Animation</h1>
+
+    <div class="controls">
+        <label>Amplitude: <input type="number" id="amp" value="1" step="0.1"></label>
+        <label>Offset: <input type="number" id="offset" value="0" step="0.1"></label>
+        <label>Phase: <input type="number" id="phase" value="0" step="0.1"></label>
+    </div>
+
+    <canvas id="canvas1"></canvas>
+    <canvas id="canvas2"></canvas>
+
+    <script src="../js/sine.js"></script>
+    <script src="../js/cosine.js"></script>
+    <script>
+        const canvas1 = document.getElementById('canvas1');
+        const canvas2 = document.getElementById('canvas2');
+        const ctx1 = canvas1.getContext('2d');
+        const ctx2 = canvas2.getContext('2d');
+
+        canvas1.width = canvas2.width = window.innerWidth * 0.9;
+        canvas1.height = canvas2.height = 300;
+
+        const sine = new Sine(ctx1, canvas1);
+        const cosine = new Cosine(ctx2, canvas2);
+
+        function animate() {
+            if (sine.isPlaying) sine.draw();
+            if (cosine.isPlaying) cosine.draw();
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        // Parametersteuerung
+        const amp = document.getElementById('amp');
+        const offset = document.getElementById('offset');
+        const phase = document.getElementById('phase');
+
+        amp.addEventListener('input', () => {
+            const a = parseFloat(amp.value);
+            sine.setAmplitude(a);
+            cosine.setAmplitude(a);
+        });
+
+        offset.addEventListener('input', () => {
+            const b = parseFloat(offset.value);
+            sine.setOffset(b);
+            cosine.setOffset(b);
+        });
+
+        phase.addEventListener('input', () => {
+            const p = parseFloat(phase.value);
+            sine.setPhase(p);
+            cosine.setPhase(p);
+        });
+    </script>
+</body>
+
+</html>
