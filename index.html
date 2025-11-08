@@ -3,30 +3,74 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="theme-color" content="#00202B">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Periodische Funktionen</title>
-    <link rel="stylesheet" href="index.css">
+    <title>Periodische Prozesse</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
-    <div class="container">
-        <div class="controls">
-            <button class="toggle" id="toggle">⏸ Pause</button>
-            <label for="amplitude">f(x)=sin(x) • </label>
-            <input type="number" name="amplitude" max="2" min="0" step="0.01" id="ampSlider" placeholder="1" value="1">
-        </div>
-        <canvas id="canvas"></canvas>
-        <div class="controls2">
-            <button class="toggle" id="toggle2">⏸ Pause</button>
-            <label for="amplitude">f(x)=sin(x) • </label>
-            <input type="number" name="amplitude" max="2" min="0" step="0.01" id="ampSlider2" placeholder="1" value="1">
-        </div>
-        <canvas id="canvas1"></canvas>
-    </div>
+    <section class="main">
+        <div class="bg">
+            <div class="container">
+                <h2>Mathematik Periodische Prozesse</h2>
 
-    <script src="js/sine.js"></script>
-    <script src="js/cosine.js"></script>
-    <script src="js/index.js"></script>
+                <div class="content">
+
+                    <div class="sine" id="sine">
+                        <div class="img-container">
+                            <img src="img/sine.png" alt="">
+                        </div>
+                        <div class="description">
+                            <h3>Sinusfunktion</h3>
+                            <p>$f(x)=sin(x+c)•a+b$</p>
+                        </div>
+                    </div>
+                    <div class="cosine" id="cosine">
+                        <div class="img-container">
+                            <img src="img/cosine.png" alt="">
+                        </div>
+                        <div class="description">
+                            <h3>Kosinusfunktion</h3>
+                            <p>$f(x)=cos(x+c)•a+b$</p>
+                        </div>
+                    </div>
+                    <div class="mixed disabled" id="mixed">
+                        <div class="img-container">
+                            <img src="img/mixed.png" alt="">
+                        </div>
+                        <div class="description">
+                            <h3>Sinus & Kosinus</h3>
+                            <p>derzeit nicht verfügbar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const sine = document.getElementById('sine');
+        sine.addEventListener('click', () => {
+            window.location.href = 'pages/sine.html'
+        });
+        const cosine = document.getElementById('cosine');
+        cosine.addEventListener('click', () => {
+            window.location.href = 'pages/cosine.html'
+        });
+        /*
+        const mixed = document.getElementById('mixed');
+        mixed.addEventListener('click', () => {
+            window.location.href = 'pages/mixed.html'
+        });
+        */
+    </script>
 </body>
 
 </html>
